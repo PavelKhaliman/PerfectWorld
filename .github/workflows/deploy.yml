@@ -1,0 +1,45 @@
+name: deploy
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/*.go'
+      - 'public/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.x'
+
+      - name: Build linux binary
+        run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o perfectworld ./cmd/server
+
+      - name: Copy files to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "perfectworld,public/*"
+          target: "/home/pavel/MyProject/PerfectWorld"
+          strip_components: 0
+
+      - name: Restart service
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            sudo systemctl daemon-reload
+            sudo systemctl restart perfectworld
+            sudo systemctl status perfectworld --no-pager || true
