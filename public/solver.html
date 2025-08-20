@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ГШ-созвездия</title>
+    <link rel="stylesheet" href="css/main.styles.css" />
+    <style>
+      .solver { padding: 24px 0 80px; }
+      .solver .controls { display: flex; gap: 8px; align-items: center; justify-content: center; margin: 16px 0 12px; }
+      .solution { margin-top: 12px; color: var(--text); text-align: center; }
+      .solution code { padding: 4px 6px; background: #111723; border: 1px solid #2a3342; border-radius: 8px; }
+      .target-group { display: inline-flex; gap: 12px; align-items: center; }
+    </style>
+  </head>
+  <body>
+    <main class="container solver">
+      <h1>Решение задачи со сферами</h1>
+      <p>Выберите цвет сфер, которые должны быть белыми или чёрными. Затем нажмите «Решить».</p>
+
+      <div class="sphere-grid">
+        <div class="row">
+          <button class="sphere" data-index="1">1</button>
+          <button class="sphere" data-index="2">2</button>
+          <button class="sphere" data-index="3">3</button>
+        </div>
+        <div class="row">
+          <button class="sphere" data-index="4">4</button>
+          <button class="sphere" data-index="5">5</button>
+          <button class="sphere" data-index="6">6</button>
+        </div>
+        <div class="row">
+          <button class="sphere" data-index="7">7</button>
+          <button class="sphere" data-index="8">8</button>
+          <button class="sphere" data-index="9">9</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="target-group">
+          <label><input type="radio" name="target" value="white" checked /> до белых</label>
+          <label><input type="radio" name="target" value="black" /> до чёрных</label>
+        </div>
+        <button id="solve" class="btn btn-primary">Решить</button>
+      </div>
+
+      <div class="solution" id="solution"></div>
+    </main>
+
+    <script src="js/solver.js"></script>
+  </body>
+  </html>
+
+

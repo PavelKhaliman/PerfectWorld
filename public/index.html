@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PerfectWorld - 9 Spheres</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="dot"></span>
+          <span class="brand-name">
+            <a href="/">PK-Website</a>
+          </span>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#" aria-disabled="true">Blog</a>
+          <a href="#" aria-disabled="true">CV</a>
+          <a href="#" aria-disabled="true">My Project</a>
+          <a href="#" aria-disabled="true">ЛК</a>     
+        </nav>
+      </div>
+    </header>
+
+    <main>    
+
+      <section class="container" id="grid">
+        <h2>9 сфер</h2>
+        <div class="sphere-grid">
+          <div class="row">
+            <button class="sphere" data-index="1" aria-label="Сфера 1">1</button>
+            <button class="sphere" data-index="2" aria-label="Сфера 2">2</button>
+            <button class="sphere" data-index="3" aria-label="Сфера 3">3</button>
+          </div>
+          <div class="row">
+            <button class="sphere" data-index="4" aria-label="Сфера 4">4</button>
+            <button class="sphere" data-index="5" aria-label="Сфера 5">5</button>
+            <button class="sphere" data-index="6" aria-label="Сфера 6">6</button>
+          </div>
+          <div class="row">
+            <button class="sphere" data-index="7" aria-label="Сфера 7">7</button>
+            <button class="sphere" data-index="8" aria-label="Сфера 8">8</button>
+            <button class="sphere" data-index="9" aria-label="Сфера 9">9</button>
+          </div>
+        </div>
+        <div style="margin-top:16px">
+          <button id="reset" class="btn btn-outline">Случайное поле</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Pavel Khaliman </span>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/app.js"></script>
+  </body>
+  </html>
+
+
