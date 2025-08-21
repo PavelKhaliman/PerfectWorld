@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PerfectWorld - 9 Spheres</title>
+    <title>PerfectWorld - ГШ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet" />
@@ -19,18 +19,16 @@
           </span>
         </div>
         <nav class="site-nav" aria-label="Primary">
-          <a href="#" aria-disabled="true">Blog</a>
-          <a href="#" aria-disabled="true">CV</a>
-          <a href="#" aria-disabled="true">My Project</a>
-          <a href="#" aria-disabled="true">ЛК</a>     
+          <a href="/">На главную</a>
+          <a href="/solver.html">Решение</a>
         </nav>
       </div>
     </header>
 
     <main>    
 
-      <section class="container" id="grid">
-        <h2>9 сфер</h2>
+      <section class="container" id="grid" style="padding-top: 32px;">
+        <h2 style="margin-top: 16px;">ГШ-созвездия</h2>
         <div class="sphere-grid">
           <div class="row">
             <button class="sphere" data-index="1" aria-label="Сфера 1">1</button>
@@ -53,13 +51,6 @@
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <span>© <span id="year"></span> Pavel Khaliman </span>
-      </div>
-    </footer>
-
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>

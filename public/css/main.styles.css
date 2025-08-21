@@ -27,6 +27,16 @@ body {
   line-height: 1.5;
 }
 
+/* Unify page title sizing across pages */
+.container h1,
+.container h2 {
+  margin: 0 0 12px 0;
+  font-family: Montserrat, Inter, system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: clamp(22px, 3.2vw, 28px);
+}
+
 .container {
   width: min(1120px, 92%);
   margin: 0 auto;
@@ -57,6 +67,7 @@ body {
 .brand-name a:hover { text-decoration: none; }
 
 .site-nav { display: inline-flex; gap: 18px; align-items: center; }
+.site-nav { font-size: 14px; }
 .site-nav a {
   color: var(--text);
   text-decoration: none;
