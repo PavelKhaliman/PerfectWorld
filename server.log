@@ -1,1 +1,4 @@
-2025/08/20 23:33:34 listening on http://localhost:8080
+nohup: ввод игнорируется
+2025/08/21 16:13:34 listening on http://localhost:8080
+2025/08/21 16:13:34 listen tcp :8080: bind: address already in use
+exit status 1
